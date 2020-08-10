@@ -1,8 +1,8 @@
 main.svelte-6cxj83{display:inherit;text-align:center;padding:0;width:100%;min-height:100vh;margin:0;background-color:#e3f2fd}
-input.svelte-1aup0fj{width:fit-content;border:none;outline:none;font-weight:100}
-button.svelte-1ius2v4{margin-top:2em}.user-pic.svelte-1ius2v4{grid-area:pic;margin:1em 0 1em 2em;height:20vh;border-radius:1em}.user-name.svelte-1ius2v4{width:90%;border-radius:0.5rem;background-color:#90caf9;grid-area:name}.user-type.svelte-1ius2v4{width:90%;border-radius:0.5rem;background-color:#90caf9;grid-area:type}.user-follow.svelte-1ius2v4{width:90%;border-radius:0.5rem;background-color:#90caf9;grid-area:fol}.user-github.svelte-1ius2v4{width:90%;border-radius:0.5rem;background-color:#90caf9;grid-area:git}.user-profile-cart.svelte-1ius2v4{font-size:2vw;color:#ff3e00;font-weight:100;display:grid;grid-template-areas:'pic name'
+input.svelte-1fcro3k{resize:none;min-width:70%;border:none;outline:none;font-weight:100}
+button.svelte-5mnakf{margin-top:2em}.user-pic.svelte-5mnakf{grid-area:pic;margin:1em 0 1em 2em;height:20vh;border-radius:1em}.user-name.svelte-5mnakf{width:90%;border-radius:0.5rem;background-color:#90caf9;grid-area:name}.user-type.svelte-5mnakf{width:90%;border-radius:0.5rem;background-color:#90caf9;grid-area:type}.user-follow.svelte-5mnakf{width:90%;border-radius:0.5rem;background-color:#90caf9;grid-area:fol}.user-github.svelte-5mnakf{width:90%;border-radius:0.5rem;background-color:#90caf9;grid-area:git}.user-profile-cart.svelte-5mnakf{font-size:3vmin;color:#ff3e00;font-weight:100;display:grid;grid-template-areas:'pic name'
 			'pic type'
 			'pic fol'
-			'pic git';grid-gap:1rem 1rem;align-items:center;justify-items:center;max-width:75vw;margin:2em auto 0 auto;background-color:#bbdefb;border-radius:1em}@media(max-width: 920px){.user-profile-cart.svelte-1ius2v4{max-width:95vw}.user-pic.svelte-1ius2v4{grid-area:pic;margin:1em 0 1em 2em;height:15vh;border-radius:1em}}
+			'pic git';grid-gap:1rem 1rem;align-items:center;justify-items:center;grid-template-columns:20vw 55vw;max-width:75vw;margin:2em auto 0 auto;background-color:#bbdefb;border-radius:1em}@media(max-width: 920px){.user-profile-cart.svelte-5mnakf{max-width:95vw;grid-template-columns:10vw 85vw}.user-pic.svelte-5mnakf{grid-area:pic;margin:1em 0 1em 3em;height:10vh;border-radius:1em}}
 
 /*# sourceMappingURL=bundle.css.map */

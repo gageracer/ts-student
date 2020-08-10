@@ -7,7 +7,8 @@ export let height:string;
 
 <style>
 input{
-    width: fit-content;
+    resize: none;
+    min-width: 70%;
     border:none;
     outline: none;
     font-weight: 100;

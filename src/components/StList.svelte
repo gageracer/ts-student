@@ -61,7 +61,7 @@
 		grid-area: git;
 	}
 	.user-profile-cart{
-		font-size: 2vw;
+		font-size: 3vmin;
 		color: #ff3e00;
 		font-weight: 100;
 
@@ -74,6 +74,7 @@
 		grid-gap: 1rem 1rem;
 		align-items: center;
 		justify-items: center;
+		grid-template-columns: 20vw 55vw;
 		/* justify-content: space-around; */
 		
 		max-width: 75vw;
@@ -84,11 +85,12 @@
     @media (max-width: 920px) {
 		.user-profile-cart {
 			max-width: 95vw;
+			grid-template-columns: 10vw 85vw;
 		}
 		.user-pic{
 		grid-area:pic;
-		margin: 1em 0 1em 2em;
-		height: 15vh;
+		margin: 1em 0 1em 3em;
+		height: 10vh;
 		border-radius: 1em;
 		}
 	}
@@ -102,9 +104,9 @@
 	<button on:click={fetchData}>Fetch Data</button>
 	{#each $mydata as user,index}
 		<div class="user-profile-cart" transition:fade>
-			<div class="user-name">username: <DInput bind:inputVal={user.login} height="2vw" bgColor="#90caf9"/></div>
-			<div class="user-type">user-type: <DInput bind:inputVal={user.type} height="2vw" bgColor="#90caf9"/></div>
-			<div class="user-follow">followers: <DInput inputVal={user.followers_url} height="2vw" bgColor="#90caf9"/></div>
+			<div class="user-name">username: <DInput bind:inputVal={user.login} height="auto" bgColor="#90caf9"/></div>
+			<div class="user-type">user-type: <DInput bind:inputVal={user.type} height="auto" bgColor="#90caf9"/></div>
+			<div class="user-follow">followers: <DInput inputVal={user.followers_url} height="auto" bgColor="#90caf9"/></div>
 			<div class="user-github">github: <a href="https://www.github.com/{user.login}">https://www.github.com/{user.login}</a></div> 
 			<img class="user-pic" src="{user.avatar_url}" alt="{user.login}-avatar">
 		</div>
