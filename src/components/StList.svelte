@@ -86,11 +86,12 @@
 		.user-profile-cart {
 			max-width: 95vw;
 			grid-template-columns: 10vw 85vw;
+			font-weight: normal;
 		}
 		.user-pic{
 		grid-area:pic;
 		margin: 1em 0 1em 3em;
-		height: 10vh;
+		height: 8vh;
 		border-radius: 1em;
 		}
 	}

@@ -13,6 +13,11 @@ input{
     outline: none;
     font-weight: 100;
 }
+@media (max-width: 920px) {
+    input{
+        font-weight: normal;
+    }
+}
 </style>
 
 <input style="background-color: {bgColor}; height:{height}" bind:value={inputVal}/>
