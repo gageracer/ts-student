@@ -143,7 +143,7 @@
 			{#each filteredTitles.filter( t => !t.filtered) as titleName,ind}
 			<div class="user-data">
 				<div>{titleName.text}: </div>
-				<DInput bind:inputVal={titleName.text} height="auto" bgColor="#90caf9"/></div>
+				<DInput bind:inputVal={user[titleName.text]} height="auto" bgColor="#90caf9"/></div>
 
 			{/each}	
 			<!-- <div class="user-github">github: <a href="https://www.github.com/{user.login}">https://www.github.com/{user.login}</a></div>  -->
