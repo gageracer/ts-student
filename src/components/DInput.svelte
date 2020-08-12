@@ -3,12 +3,17 @@
 export let inputVal: string;
 export let bgColor: string;
 export let height:string;
+
+function onFocus(){bgColor="#b4ffff"}
+
+function onBlur(){bgColor="#90caf9"}
 </script>
 
 <style>
 input{
+    transition: background-color 0.5s ease;
     resize: none;
-    min-width: 70%;
+    width: 100%;
     border:none;
     outline: none;
     font-weight: 100;
@@ -20,4 +25,4 @@ input{
 }
 </style>
 
-<input style="background-color: {bgColor}; height:{height}" bind:value={inputVal}/>
+<input type="text" on:focus={onFocus} on:blur={onBlur} style="background-color: {bgColor}; height:{height}" bind:value={inputVal}/>
