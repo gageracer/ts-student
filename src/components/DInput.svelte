@@ -13,7 +13,7 @@ function onBlur(){bgColor="#90caf9"}
 input{
     transition: background-color 0.5s ease;
     resize: none;
-    width: 100%;
+    width: 90%;
     border:none;
     outline: none;
     font-weight: 100;

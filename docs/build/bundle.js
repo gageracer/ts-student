@@ -426,6 +426,13 @@ var app = (function () {
         : typeof globalThis !== 'undefined'
             ? globalThis
             : global);
+    function each(items, fn) {
+        let str = '';
+        for (let i = 0; i < items.length; i += 1) {
+            str += fn(items[i], i);
+        }
+        return str;
+    }
 
     function bind(component, name, callback) {
         const index = component.$$.props[name];
@@ -698,8 +705,8 @@ var app = (function () {
     			attr_dev(input, "type", "text");
     			set_style(input, "background-color", /*bgColor*/ ctx[1]);
     			set_style(input, "height", /*height*/ ctx[2]);
-    			attr_dev(input, "class", "svelte-1tzc1pk");
-    			add_location(input, file, 23, 0, 416);
+    			attr_dev(input, "class", "svelte-1gxebcy");
+    			add_location(input, file, 23, 0, 415);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -875,30 +882,50 @@ var app = (function () {
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[11] = list[i];
-    	child_ctx[12] = list;
-    	child_ctx[13] = i;
+    	child_ctx[13] = list[i];
+    	child_ctx[14] = list;
+    	child_ctx[15] = i;
     	return child_ctx;
     }
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
-    	child_ctx[9] = list;
-    	child_ctx[10] = i;
+    	child_ctx[10] = list[i];
+    	child_ctx[12] = i;
     	return child_ctx;
     }
 
-    // (97:0) {:else}
+    function get_each_context_2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[13] = list[i];
+    	child_ctx[15] = i;
+    	return child_ctx;
+    }
+
+    // (128:0) {:else}
     function create_else_block(ctx) {
     	let button0;
     	let t1;
     	let button1;
     	let t3;
-    	let each_1_anchor;
+    	let br;
+    	let t4;
+    	let p;
+    	let t6;
+    	let div;
+    	let t7;
+    	let each1_anchor;
     	let current;
     	let mounted;
     	let dispose;
+    	let each_value_2 = /*filteredTitles*/ ctx[1];
+    	validate_each_argument(each_value_2);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    	}
+
     	let each_value = /*$mydata*/ ctx[2];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -919,28 +946,56 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Fetch Data";
     			t3 = space();
+    			br = element("br");
+    			t4 = space();
+    			p = element("p");
+    			p.textContent = "Select any key to filter the data";
+    			t6 = space();
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t7 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			each_1_anchor = empty();
-    			attr_dev(button0, "class", "svelte-1qn7g62");
-    			add_location(button0, file$1, 97, 1, 2804);
-    			attr_dev(button1, "class", "svelte-1qn7g62");
-    			add_location(button1, file$1, 98, 1, 2854);
+    			each1_anchor = empty();
+    			attr_dev(button0, "class", "svelte-bl20v2");
+    			add_location(button0, file$1, 128, 1, 3550);
+    			attr_dev(button1, "class", "svelte-bl20v2");
+    			add_location(button1, file$1, 129, 1, 3600);
+    			add_location(br, file$1, 130, 1, 3650);
+    			attr_dev(p, "class", "svelte-bl20v2");
+    			add_location(p, file$1, 131, 1, 3657);
+    			attr_dev(div, "class", "data-keys svelte-bl20v2");
+    			add_location(div, file$1, 132, 1, 3699);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button0, anchor);
     			insert_dev(target, t1, anchor);
     			insert_dev(target, button1, anchor);
     			insert_dev(target, t3, anchor);
+    			insert_dev(target, br, anchor);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div, null);
+    			}
+
+    			insert_dev(target, t7, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(target, anchor);
     			}
 
-    			insert_dev(target, each_1_anchor, anchor);
+    			insert_dev(target, each1_anchor, anchor);
     			current = true;
 
     			if (!mounted) {
@@ -953,7 +1008,31 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*titleNum, titleNames, $mydata*/ 14) {
+    			if (dirty & /*filteredTitles, filterTitle*/ 66) {
+    				each_value_2 = /*filteredTitles*/ ctx[1];
+    				validate_each_argument(each_value_2);
+    				let i;
+
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_2(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_2.length;
+    			}
+
+    			if (dirty & /*titleNum, filteredTitles, $mydata*/ 14) {
     				each_value = /*$mydata*/ ctx[2];
     				validate_each_argument(each_value);
     				let i;
@@ -968,7 +1047,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    						each_blocks[i].m(each1_anchor.parentNode, each1_anchor);
     					}
     				}
 
@@ -1004,8 +1083,15 @@ var app = (function () {
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(button1);
     			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks_1, detaching);
+    			if (detaching) detach_dev(t7);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(each_1_anchor);
+    			if (detaching) detach_dev(each1_anchor);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -1015,14 +1101,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(97:0) {:else}",
+    		source: "(128:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:0) {#if $mydata.length == 0}
+    // (125:0) {#if $mydata.length == 0}
     function create_if_block(ctx) {
     	let button;
     	let t1;
@@ -1037,9 +1123,10 @@ var app = (function () {
     			t1 = space();
     			p = element("p");
     			p.textContent = "Fetch data to see it";
-    			attr_dev(button, "class", "svelte-1qn7g62");
-    			add_location(button, file$1, 94, 1, 2716);
-    			add_location(p, file$1, 95, 1, 2766);
+    			attr_dev(button, "class", "svelte-bl20v2");
+    			add_location(button, file$1, 125, 1, 3462);
+    			attr_dev(p, "class", "svelte-bl20v2");
+    			add_location(p, file$1, 126, 1, 3512);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1067,18 +1154,76 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(94:0) {#if $mydata.length == 0}",
+    		source: "(125:0) {#if $mydata.length == 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (104:3) {#each titleNames as titleName,tind}
+    // (134:2) {#each filteredTitles as titleName,ind }
+    function create_each_block_2(ctx) {
+    	let button;
+    	let t_value = /*titleName*/ ctx[13].text + "";
+    	let t;
+    	let button_style_value;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			t = text(t_value);
+
+    			attr_dev(button, "style", button_style_value = /*titleName*/ ctx[13].filtered
+    			? "opacity: 50%;"
+    			: "opacity:100%;");
+
+    			attr_dev(button, "class", "svelte-bl20v2");
+    			add_location(button, file$1, 134, 2, 3768);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+    			append_dev(button, t);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*filterTitle*/ ctx[6].bind(this, /*ind*/ ctx[15]), false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*filteredTitles*/ 2 && t_value !== (t_value = /*titleName*/ ctx[13].text + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*filteredTitles*/ 2 && button_style_value !== (button_style_value = /*titleName*/ ctx[13].filtered
+    			? "opacity: 50%;"
+    			: "opacity:100%;")) {
+    				attr_dev(button, "style", button_style_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_2.name,
+    		type: "each",
+    		source: "(134:2) {#each filteredTitles as titleName,ind }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (144:3) {#each filteredTitles.filter( t => !t.filtered) as titleName,ind}
     function create_each_block_1(ctx) {
     	let div1;
     	let div0;
-    	let t0_value = /*titleName*/ ctx[11] + "";
+    	let t0_value = /*titleName*/ ctx[13].text + "";
     	let t0;
     	let t1;
     	let t2;
@@ -1087,13 +1232,13 @@ var app = (function () {
     	let current;
 
     	function dinput_inputVal_binding(value) {
-    		/*dinput_inputVal_binding*/ ctx[6].call(null, value, /*user*/ ctx[8], /*titleName*/ ctx[11]);
+    		/*dinput_inputVal_binding*/ ctx[7].call(null, value, /*titleName*/ ctx[13]);
     	}
 
     	let dinput_props = { height: "auto", bgColor: "#90caf9" };
 
-    	if (/*user*/ ctx[8][/*titleName*/ ctx[11]] !== void 0) {
-    		dinput_props.inputVal = /*user*/ ctx[8][/*titleName*/ ctx[11]];
+    	if (/*titleName*/ ctx[13].text !== void 0) {
+    		dinput_props.inputVal = /*titleName*/ ctx[13].text;
     	}
 
     	dinput = new DInput({ props: dinput_props, $$inline: true });
@@ -1107,9 +1252,9 @@ var app = (function () {
     			t1 = text(":");
     			t2 = space();
     			create_component(dinput.$$.fragment);
-    			add_location(div0, file$1, 105, 4, 3161);
-    			attr_dev(div1, "class", "user-data svelte-1qn7g62");
-    			add_location(div1, file$1, 104, 3, 3133);
+    			add_location(div0, file$1, 145, 4, 4215);
+    			attr_dev(div1, "class", "user-data svelte-bl20v2");
+    			add_location(div1, file$1, 144, 3, 4187);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1122,12 +1267,12 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*titleNames*/ 2) && t0_value !== (t0_value = /*titleName*/ ctx[11] + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*filteredTitles*/ 2) && t0_value !== (t0_value = /*titleName*/ ctx[13].text + "")) set_data_dev(t0, t0_value);
     			const dinput_changes = {};
 
-    			if (!updating_inputVal && dirty & /*$mydata, titleNames*/ 6) {
+    			if (!updating_inputVal && dirty & /*filteredTitles*/ 2) {
     				updating_inputVal = true;
-    				dinput_changes.inputVal = /*user*/ ctx[8][/*titleName*/ ctx[11]];
+    				dinput_changes.inputVal = /*titleName*/ ctx[13].text;
     				add_flush_callback(() => updating_inputVal = false);
     			}
 
@@ -1152,14 +1297,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(104:3) {#each titleNames as titleName,tind}",
+    		source: "(144:3) {#each filteredTitles.filter( t => !t.filtered) as titleName,ind}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (100:1) {#each $mydata as user,index}
+    // (140:1) {#each $mydata as user,index}
     function create_each_block(ctx) {
     	let div;
     	let img;
@@ -1169,7 +1314,7 @@ var app = (function () {
     	let t1;
     	let div_transition;
     	let current;
-    	let each_value_1 = /*titleNames*/ ctx[1];
+    	let each_value_1 = /*filteredTitles*/ ctx[1].filter(func);
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -1192,13 +1337,13 @@ var app = (function () {
     			}
 
     			t1 = space();
-    			attr_dev(img, "class", "user-pic svelte-1qn7g62");
-    			if (img.src !== (img_src_value = /*user*/ ctx[8].avatar_url)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", img_alt_value = "" + (/*user*/ ctx[8].login + "-avatar"));
-    			add_location(img, file$1, 101, 3, 3016);
-    			attr_dev(div, "class", "user-profile-cart svelte-1qn7g62");
+    			attr_dev(img, "class", "user-pic svelte-bl20v2");
+    			if (img.src !== (img_src_value = /*user*/ ctx[10].avatar_url)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", img_alt_value = "" + (/*user*/ ctx[10].login + "-avatar"));
+    			add_location(img, file$1, 141, 3, 4041);
+    			attr_dev(div, "class", "user-profile-cart svelte-bl20v2");
     			set_style(div, "--colNum", /*titleNum*/ ctx[3]);
-    			add_location(div, file$1, 100, 2, 2936);
+    			add_location(div, file$1, 140, 2, 3961);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1213,16 +1358,16 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*$mydata*/ 4 && img.src !== (img_src_value = /*user*/ ctx[8].avatar_url)) {
+    			if (!current || dirty & /*$mydata*/ 4 && img.src !== (img_src_value = /*user*/ ctx[10].avatar_url)) {
     				attr_dev(img, "src", img_src_value);
     			}
 
-    			if (!current || dirty & /*$mydata*/ 4 && img_alt_value !== (img_alt_value = "" + (/*user*/ ctx[8].login + "-avatar"))) {
+    			if (!current || dirty & /*$mydata*/ 4 && img_alt_value !== (img_alt_value = "" + (/*user*/ ctx[10].login + "-avatar"))) {
     				attr_dev(img, "alt", img_alt_value);
     			}
 
-    			if (dirty & /*$mydata, titleNames*/ 6) {
-    				each_value_1 = /*titleNames*/ ctx[1];
+    			if (dirty & /*filteredTitles*/ 2) {
+    				each_value_1 = /*filteredTitles*/ ctx[1].filter(func);
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -1285,7 +1430,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(100:1) {#each $mydata as user,index}",
+    		source: "(140:1) {#each $mydata as user,index}",
     		ctx
     	});
 
@@ -1377,6 +1522,8 @@ var app = (function () {
     	return [];
     }
 
+    const func = t => !t.filtered;
+
     function instance$1($$self, $$props, $$invalidate) {
     	let $mydata,
     		$$unsubscribe_mydata = noop,
@@ -1425,12 +1572,13 @@ var app = (function () {
     	$$subscribe_mydata();
     	let titleNames = Object.keys($mydata[0]).filter(a => a != "avatar_url");
     	let titleNum = titleNames.length;
+    	let filteredTitles = titleNames.map(txt => ({ filtered: false, text: txt }));
 
     	function fetchData() {
     		return __awaiter(this, void 0, void 0, function* () {
     			const getData = yield fetch("https://api.github.com/users").then(res => res.json()).then(data => {
     				set_store_value(mydata, $mydata = data); //response type
-    				$$invalidate(1, titleNames = Object.keys($mydata[0]).filter(a => a != "avatar_url"));
+    				$$invalidate(8, titleNames = Object.keys($mydata[0]).filter(a => a != "avatar_url"));
     			});
     		});
     	}
@@ -1438,6 +1586,11 @@ var app = (function () {
     	function handleSave() {
     		localStorage.setItem("myData", JSON.stringify($mydata));
     		console.log($mydata);
+    	}
+
+    	function filterTitle(ind) {
+    		$$invalidate(1, filteredTitles[ind].filtered = !filteredTitles[ind].filtered, filteredTitles);
+    		console.log(filteredTitles);
     	}
 
     	const writable_props = [];
@@ -1449,9 +1602,9 @@ var app = (function () {
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("StList", $$slots, []);
 
-    	function dinput_inputVal_binding(value, user, titleName) {
-    		user[titleName] = value;
-    		mydata.set($mydata);
+    	function dinput_inputVal_binding(value, titleName) {
+    		titleName.text = value;
+    		$$invalidate(1, filteredTitles);
     	}
 
     	$$self.$capture_state = () => ({
@@ -1459,19 +1612,23 @@ var app = (function () {
     		DInput,
     		writable,
     		fade,
+    		each,
     		mydata,
     		titleNames,
     		titleNum,
+    		filteredTitles,
     		fetchData,
     		handleSave,
     		getLocalData,
+    		filterTitle,
     		$mydata
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("__awaiter" in $$props) __awaiter = $$props.__awaiter;
-    		if ("titleNames" in $$props) $$invalidate(1, titleNames = $$props.titleNames);
+    		if ("titleNames" in $$props) $$invalidate(8, titleNames = $$props.titleNames);
     		if ("titleNum" in $$props) $$invalidate(3, titleNum = $$props.titleNum);
+    		if ("filteredTitles" in $$props) $$invalidate(1, filteredTitles = $$props.filteredTitles);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -1479,7 +1636,7 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*$mydata, titleNames*/ 6) {
+    		if ($$self.$$.dirty & /*$mydata, titleNames*/ 260) {
     			 {
     				console.log($mydata);
     				console.log(titleNames);
@@ -1489,11 +1646,12 @@ var app = (function () {
 
     	return [
     		mydata,
-    		titleNames,
+    		filteredTitles,
     		$mydata,
     		titleNum,
     		fetchData,
     		handleSave,
+    		filterTitle,
     		dinput_inputVal_binding
     	];
     }

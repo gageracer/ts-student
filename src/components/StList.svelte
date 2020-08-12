@@ -3,11 +3,13 @@
 	import DInput from './DInput.svelte';
     import {writable} from 'svelte/store';
     import {fade} from 'svelte/transition';
+	import { each } from 'svelte/internal';
     
 	export const mydata = writable(getLocalData());
 
 	let titleNames: string[] = Object.keys($mydata[0]).filter( a => a != "avatar_url")
 	let titleNum: number = titleNames.length;
+	let filteredTitles: object[] = titleNames.map( txt => ({filtered: false, text: txt}) );
 	
 
 	async function fetchData(){
@@ -28,6 +30,11 @@
 		return []
 	}
 	
+	function filterTitle(ind:number){
+		filteredTitles[ind].filtered = !filteredTitles[ind].filtered;
+		console.log(filteredTitles);
+		
+	}
 	$: {
 		console.log($mydata);
 		console.log(titleNames);
@@ -39,7 +46,11 @@
 
 <style>
 	button{
-		margin-top:2em;
+		margin:1em 0 0 0;
+	}
+	p{
+		font-size: 3vmin;
+		color: #ff3e00;
 	}
     .user-pic{
 		grid-area: 1 / 1 / 2 / 2;
@@ -65,6 +76,7 @@
 		grid-gap: 1rem 1rem;
 		align-items: center;
 		justify-items: center;
+		grid-template-rows: repeat(2, auto);
 		/* grid-template-columns: 5vw repeat(var(--colNum),auto); */
 
 		/* justify-content: space-around; */
@@ -74,7 +86,18 @@
 		background-color: #bbdefb;
 		border-radius: 1em;
 	}
-    @media (max-width: 920px) {
+	.data-keys{
+		width: 80vw;
+		margin: 0 auto 0 auto;
+		display: grid;
+		grid-template-rows: repeat(2, auto);
+		grid-template-columns: repeat(8,auto);		
+	}
+	.data-keys>button{
+		transition: opacity 0.5s ease;
+		/* background-color: transparent; */
+	}
+	@media (max-width: 920px) {
 		.user-profile-cart {
 			max-width: 95vw;
 			grid-template-rows: repeat(2, auto);
@@ -86,6 +109,15 @@
 		height: 10vh;
 		border-radius: 1em;
 		}
+		.data-keys{
+			width: 95vw;
+			display: grid;
+			grid-template-rows: repeat(4, auto);
+			grid-template-columns: repeat(3,auto);
+		}
+		button{
+		margin-top:1em;
+		}
 	}
 </style>
 	
@@ -95,20 +127,25 @@
 {:else}
 	<button on:click={handleSave}>Save Data</button>
 	<button on:click={fetchData}>Fetch Data</button>
+	<br/>
+	<p>Select any key to filter the data</p>
+	<div class="data-keys">
+		{#each filteredTitles as titleName,ind }
+		<button on:click="{filterTitle.bind(this,ind)}" style="{titleName.filtered ? 'opacity: 50%;':'opacity:100%;'}">{titleName.text}</button>
+			
+		{/each}
+	</div>
+
 	{#each $mydata as user,index}
 		<div class="user-profile-cart" transition:fade style="--colNum: {titleNum}">
 			<img class="user-pic" src="{user.avatar_url}" alt="{user.login}-avatar">
 
-			{#each titleNames as titleName,tind}
+			{#each filteredTitles.filter( t => !t.filtered) as titleName,ind}
 			<div class="user-data">
-				<div>{titleName}: </div>
-				<DInput bind:inputVal={user[titleName]} height="auto" bgColor="#90caf9"/></div>
+				<div>{titleName.text}: </div>
+				<DInput bind:inputVal={titleName.text} height="auto" bgColor="#90caf9"/></div>
 
-			{/each}
-			<!-- <div class="user-name">username: <DInput bind:inputVal={user.login} height="auto" bgColor="#90caf9"/></div>
-			<div class="user-type">user-type: <DInput bind:inputVal={user.type} height="auto" bgColor="#90caf9"/></div>
-			<div class="user-follow">followers: <DInput inputVal={user.followers_url} height="auto" bgColor="#90caf9"/></div> -->
-			
+			{/each}	
 			<!-- <div class="user-github">github: <a href="https://www.github.com/{user.login}">https://www.github.com/{user.login}</a></div>  -->
 		</div>
 	{/each}
