@@ -169,7 +169,7 @@
 		font-weight: 200;
 
 		display: inline-grid;
-		grid-gap: 0 1rem;
+		grid-gap: 0 1em;
 		align-items: flex-start;
 		justify-items: flex-start;
 
@@ -222,14 +222,26 @@
 		margin: 5px;
 	}
 	@media (max-width: 920px) {
-		.user-profile-cart {
+		/* .user-profile-cart {
 			max-width: 95vw;
 			font-weight: normal;
-		}
+		} */
 		.user-pic{
-		grid-area: pic;
-		margin: 1em 0 0 1em;
-		border-radius: 1em;
+			height: 10vh;
+		}
+		.list-body{
+			max-width: 90vw;;
+		}
+		#name-input{
+			font-size: 3vmin;
+			font-weight: 400;	
+		}
+		#tag-input{
+			font-size: 3vmin;
+			font-weight: 400;	
+		}
+		.expand-btn{
+
 		}
 		button{
 		margin-top:1em;
@@ -258,6 +270,7 @@
 				<div class="user-skill">Skill: {user.skill}</div>
 				<div class="user-average">Average:{avgGrade(user.grades)}%</div>
 				<div class="expand-btn" on:click="{ () => user.expandGrade = !user.expandGrade}"><div id="{user.expandGrade ? 'square': 'cross'}"></div></div>
+
 				{#if user.expandGrade}
 					<div class="user-grades" transition:fly="{{ y: -10, duration: 200 }}">
 						{#each user.grades as grade,gind}
