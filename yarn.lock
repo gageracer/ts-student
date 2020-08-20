@@ -77,9 +77,9 @@
     picomatch "^2.2.2"
 
 "@tsconfig/svelte@^1.0.0":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@tsconfig/svelte/-/svelte-1.0.8.tgz#3669305544f8ccbc945dc6906e5be2e0770e7389"
-  integrity sha512-o6vRhB2axVYXuur37VhHeOj7KYrQD5/y51Brsgfy/ymMTP0kGIvnOLcN9IR6NuzkdKJvnNhGYMGJPOh/MHYuZQ==
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@tsconfig/svelte/-/svelte-1.0.10.tgz#30ec7feeee0bdf38b12a50f0686f8a2e7b6b9dc0"
+  integrity sha512-EBrpH2iXXfaf/9z81koiDYkp2mlwW2XzFcAqn6qh7VKyP8zBvHHAQzNhY+W9vH5arAjmGAm5g8ElWq6YmXm3ig==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -97,9 +97,9 @@
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
 "@types/node@*":
-  version "14.0.27"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.27.tgz#a151873af5a5e851b51b3b065c9e63390a9e0eb1"
-  integrity sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
+  version "14.6.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.0.tgz#7d4411bf5157339337d7cff864d9ff45f177b499"
+  integrity sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -494,9 +494,9 @@ local-access@^1.0.1:
   integrity sha512-ykt2pgN0aqIy6KQC1CqdWTWkmUwNgaOS6dcpHVjyBJONA+Xi7AtSB1vuxC/U/0tjIP3wcRudwQk1YYzUvzk2bA==
 
 lodash@^4.17.19:
-  version "4.17.19"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
-  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
 lower-case@^2.0.1:
   version "2.0.1"
@@ -565,9 +565,9 @@ once@^1.3.0:
     wrappy "1"
 
 "opts@>= 1.2.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/opts/-/opts-2.0.0.tgz#c0b2cebdf53eaeafc21ed844e34773758dcf41e2"
-  integrity sha512-rPleeyX48sBEc4aj7rAok5dCbvRdYpdbIdSRR4gnIK98a7Rvd4l3wlv4YHQr2mwPQTpKQiw8uipi/WoyItDINg==
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/opts/-/opts-2.0.2.tgz#a17e189fbbfee171da559edd8a42423bc5993ce1"
+  integrity sha512-k41FwbcLnlgnFh69f4qdUfvDQ+5vaSDnVPFI/y5XuhKRq97EnVVneO9F1ESVCdiVu4fCS2L8usX3mU331hB7pg==
 
 parent-module@^1.0.0:
   version "1.0.1"
@@ -683,9 +683,9 @@ rollup-pluginutils@^2.8.2:
     estree-walker "^0.6.1"
 
 rollup@^2.3.4:
-  version "2.23.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.23.1.tgz#d458d28386dc7660c2e8a4978bea6f9494046c20"
-  integrity sha512-Heyl885+lyN/giQwxA8AYT2GY3U+gOlTqVLrMQYno8Z1X9lAOpfXPiKiZCyPc25e9BLJM3Zlh957dpTlO4pa8A==
+  version "2.26.4"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.26.4.tgz#a8350fd6bd56fce9873a7db2bd9547d40de3992b"
+  integrity sha512-6+qsGuP0MXGd7vlYmk72utm1MrgZj5GfXibGL+cRkKQ9+ZL/BnFThDl0D5bcl7AqlzMjAQXRAwZX1HVm22M/4Q==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -707,9 +707,9 @@ serialize-javascript@^2.1.2:
   integrity sha512-rs9OggEUF0V4jUSecXazOYsLfu7OGK2qIn3c7IPBiffz32XniEp/TX9Xmc9LQfK2nQ2QKHvZ2oygKUGU0lG4jQ==
 
 sirv-cli@^1.0.0:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/sirv-cli/-/sirv-cli-1.0.5.tgz#b2a6ecc0e0e3e39d87cc159983150fc623e3ad2c"
-  integrity sha512-3TECcM4Q1b18KGSXuvtHIAcGoatYkk3MYvjCzn3CFq0aNYT2EDmbSP+/ISpyYtQLdZXWAhb4hHTn/ui5pFaqvw==
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/sirv-cli/-/sirv-cli-1.0.6.tgz#a4924254d965b23a518512f70010e710185de2f1"
+  integrity sha512-K/iY1OHG7hTw4GzLoqMhwzKCbgWmx5joYAAF2+CwyiamWCpVzAgNVWgAc0JmSA2Gf3wseov05il2QbFTGTZMVg==
   dependencies:
     console-clear "^1.1.0"
     get-port "^3.2.0"
@@ -717,13 +717,13 @@ sirv-cli@^1.0.0:
     local-access "^1.0.1"
     sade "^1.6.0"
     semiver "^1.0.0"
-    sirv "^1.0.5"
+    sirv "^1.0.6"
     tinydate "^1.0.0"
 
-sirv@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/sirv/-/sirv-1.0.5.tgz#12e31139ddd43eff13c122d5b679f337045e0b5b"
-  integrity sha512-VBGinItX5MJXafH0FmVsc2G5INwmd9ygT05DVdEw2piBBKRNUBGy3Aq0SmpVzP121astWFE2XERNJOggrQcUww==
+sirv@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/sirv/-/sirv-1.0.6.tgz#178c13bffccc0dea715a0e50894cf3a6c74a715e"
+  integrity sha512-LRGu7Op4Xl9hhigOy2kcB53zAYTjNDdpooey49dIU0cMdpOv9ithVf7nstk3jvs8EhMiT/VORoyazZYGgw4vnA==
   dependencies:
     "@polka/url" "^1.0.0-next.9"
     mime "^2.3.1"
@@ -781,9 +781,9 @@ supports-color@^7.1.0:
     has-flag "^4.0.0"
 
 svelte-check@^1.0.0:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-1.0.9.tgz#ea3570c6974750fed99d3dea4329a8a0242da94a"
-  integrity sha512-KP6H7rUKYd/896iWlfWS0VBGV/MG9OVZKPY9+Zg/tw+gXnc6/zZZPpQVyFL8S4TpEDDcMohdj4w2E/Z1cfNKeA==
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-1.0.20.tgz#23a6912e6dbd896e3d32b1f12167ad930e525aa4"
+  integrity sha512-MRpsl3g2Qu3po8YUzKKVlZL/wfmiHTqlv6DrDyMzindKl0DKCMobYysHJW1XKdCetbpvQhQnLBUsZw/CsXAxOQ==
   dependencies:
     chalk "^4.0.0"
     chokidar "^3.4.1"
@@ -796,9 +796,9 @@ svelte-check@^1.0.0:
     vscode-uri "2.1.1"
 
 svelte-language-server@*:
-  version "0.10.88"
-  resolved "https://registry.yarnpkg.com/svelte-language-server/-/svelte-language-server-0.10.88.tgz#4a183e8d2950f14062b782645097b7e49f1e9bcf"
-  integrity sha512-Fbsz+ydVajeV3P2gg++5bwgzgOYYi2Lat4z9QEPKgBzw835MYkBZg2lUO1oSTAVX/aUPiapVNB2zabYS/lMHGw==
+  version "0.10.99"
+  resolved "https://registry.yarnpkg.com/svelte-language-server/-/svelte-language-server-0.10.99.tgz#3cbb45e02494dd06c6e110e9081a8f5e81dc8313"
+  integrity sha512-ntD+4Pird5Sgg9jRMEc7mjdnrrlDqMLGdxTFzOYOgr0VoofLhds2vu3saz8MsrsYF+0XriMACEeFcGn+GuWpAg==
   dependencies:
     cosmiconfig "^6.0.0"
     estree-walker "^2.0.1"
@@ -819,9 +819,9 @@ svelte-language-server@*:
     vscode-uri "2.1.1"
 
 svelte-preprocess@^4.0.0:
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.0.10.tgz#e6165a2500dcb3a1c88a19d9b8c74c919eca6b3c"
-  integrity sha512-Oafr9EzQkr6uf5PAN7McWmmShxmuowOe8Lsbvjt7NFncqVYDvkLBoHwSq/z1n2+APhowDPhyQD2hyCVs30cJwA==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.1.1.tgz#25e22b2acf45a82f66d480c57b8bacf1aeaaffda"
+  integrity sha512-fCnq15SY0MYd70as0z0IcdtU6a6m0RTFdWViWSdV7styI/yp6SVkMinpFR7GbQJR3StzZ/9FEmroSiYYzc3VZA==
   dependencies:
     "@types/pug" "^2.0.4"
     "@types/sass" "^1.16.0"
@@ -839,9 +839,9 @@ svelte-preprocess@~3.9.11:
     strip-indent "^3.0.0"
 
 svelte2tsx@*:
-  version "0.1.75"
-  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.1.75.tgz#96da3f0409ac602a76970dc55358ace32ad07bdf"
-  integrity sha512-A9Ow5RVIlWCVruFHFmKSokRtjhdgyWQPZVoIabv229RIqViMIeSA4vcpMrpqlgbk7ZmT5U5t+vxFFb60eIA53A==
+  version "0.1.86"
+  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.1.86.tgz#c2c78e67b535a5db6426575466358f2bdcf3f2f5"
+  integrity sha512-2VGXnH8bagwUCUfN9024lfK2ja0jNXjgBKG21bW4UAMoSqR/IBdXGLrJ2wpeQ4DRE1pFNS3J+qU1Ie/2CHDKLg==
   dependencies:
     dedent-js "^1.0.1"
     pascal-case "^3.1.1"
@@ -892,7 +892,12 @@ tslib@^2.0.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
   integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 
-typescript@*, typescript@^3.9.3:
+typescript@*:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
+  integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
+
+typescript@^3.9.3:
   version "3.9.7"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
