@@ -261,7 +261,7 @@
 		<input id="name-input" type="text" bind:value={filterByName} placeholder="Search by name">
 		<input id="tag-input" type="text" bind:value={filterByTag} placeholder="Search by tag">
 
-		{#each $mydata.filter(t => ( t.firstName.concat(' ',t.lastName)).toLowerCase().includes(filterByName.toLowerCase()) && ( filterByTag != "" ?  t.tags.find(ele => ele.includes(filterByTag)): true ) ) as user,index}
+		{#each $mydata.filter(t => ( t.firstName.concat(' ',t.lastName)).toLowerCase().includes(filterByName.toLowerCase()) && ( filterByTag != "" ?  t.tags.find(ele => ele.toLowerCase().includes(filterByTag.toLowerCase())): true ) ) as user,index}
 			<div class="user-profile-cart" transition:fade>
 				<img class="user-pic" src="{user.pic}" alt="{user.firstName}-avatar">
 				<div class="user-name">{user.firstName} {user.lastName}</div>
