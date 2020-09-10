@@ -258,8 +258,8 @@
 	<br/>
 	
 	<div class="list-body">
-		<input id="name-input" type="text" bind:value={filterByName} placeholder="Search by name">
-		<input id="tag-input" type="text" bind:value={filterByTag} placeholder="Search by tag">
+		<input label="name-search" id="name-input" type="text" bind:value={filterByName} placeholder="Search by name">
+		<input label="tag-search" id="tag-input" type="text" bind:value={filterByTag} placeholder="Search by tag">
 
 		{#each $mydata.filter(t => ( t.firstName.concat(' ',t.lastName)).toLowerCase().includes(filterByName.toLowerCase()) && ( filterByTag != "" ?  t.tags.find(ele => ele.toLowerCase().includes(filterByTag.toLowerCase())): true ) ) as user,index}
 			<div class="user-profile-cart" transition:fade>
