@@ -12,7 +12,7 @@
 	let filterByTag: string = '';
 
 	async function fetchData(){
-	const getData = await fetch('https://www.hatchways.io/api/assessment/students')
+	const getData = await fetch('https://api.hatchways.io/assessment/students')
 			.then(res => res.json())//response type
 			.then(data => {
 				$mydata = data.students.map( student => {return {...student,expandGrade: false, tempTag: "" ,tags:[]} });
