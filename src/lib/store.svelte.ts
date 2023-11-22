@@ -1,3 +1,15 @@
+type Student = {
+	city: typeof $state<string>;
+	company: typeof $state<string>;
+	email: typeof $state<string>;
+	firstName: typeof $state<string>;
+	grades: typeof $state<[string]>;
+	id: typeof $state<string>;
+	lastName: typeof $state<string>;
+	pic: typeof $state<string>;
+	skill: typeof $state<string>;
+};
+
 export function createLocalData() {
 	const localStorage = null;
 	let store = $state(getLocalData());
@@ -16,8 +28,13 @@ export function createLocalData() {
 		await fetch('https://api.hatchways.io/assessment/students')
 			.then((res) => res.json()) //response type
 			.then((data) => {
-				store = data.students.map((student: any) => {
-					return { ...student, expandGrade: false, tempTag: '', tags: [] };
+				store = data.students.map((student: Student) => {
+					return {
+						...student,
+						expandGrade: typeof $state<boolean>,
+						tempTag: typeof $state<string>,
+						tags: typeof $state<[string]>
+					};
 				});
 				console.log(data);
 				console.log(typeof data);
@@ -31,7 +48,7 @@ export function createLocalData() {
 	const addTag = (index: number, newTag: string) => {
 		store[index].tags.push(newTag);
 		store[index].tags = store[index].tags;
-		store[index].tempTag = ''
+		store[index].tempTag = '';
 	};
 	const avgGrade = (arr: any[]) =>
 		arr.reduce((p, c) => parseFloat(p) + parseFloat(c), 0) / arr.length;

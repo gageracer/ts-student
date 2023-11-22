@@ -31,6 +31,8 @@
 		</label>
 
 		{#each mydata.filtered as user, index}
+		<input class="user-email" bind:value={mydata.data[index].email}/>
+		<input class="user-email" bind:value={user.email}/>
 			<div class="user-profile-cart" transition:fade>
 				<img class="user-pic" src={user.pic} alt="{user.firstName}-avatar" />
 				<div class="user-name">{user.firstName} {user.lastName}</div>
