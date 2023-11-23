@@ -1,9 +1,9 @@
 <script lang="ts">
 	// import DInput from './DInput.svelte';
-	import { fade, fly } from 'svelte/transition';
-	import { createLocalData } from '$lib/store.svelte';
+	import { fade, fly } from 'svelte/transition'
+	import { createLocalData } from '$lib/store.svelte'
 
-	const mydata = createLocalData();
+	const mydata = createLocalData()
 </script>
 
 {#if mydata.data.length == 0}
@@ -31,16 +31,19 @@
 		</label>
 
 		{#each mydata.filtered as user, index}
-		<input class="user-email" bind:value={mydata.data[index].email}/>
-		<input class="user-email" bind:value={user.email}/>
 			<div class="user-profile-cart" transition:fade>
 				<img class="user-pic" src={user.pic} alt="{user.firstName}-avatar" />
-				<div class="user-name">{user.firstName} {user.lastName}</div>
-				<div class="user-email">Email: {user.email}</div>
-				<div class="user-company">Company: {user.company}</div>
-				<div class="user-skill">Skill: {user.skill}</div>
-				<div class="user-average">Average:{mydata.avgGrade(user.grades)}%</div>
-				<button class="expand-btn" onclick={() => mydata.expandGrade(index)}>
+				<div class="user-name">
+					<input class="input-name" bind:value={user.firstName} />
+					<input class="input-name" bind:value={user.lastName} />
+				</div>
+				<div class="user-email">Email: <input class="user-email" bind:value={user.email} /></div>
+				<div class="user-company">
+					Company: <input class="user-email" bind:value={user.company} />
+				</div>
+				<div class="user-skill">Skill: <input class="user-email" bind:value={user.skill} /></div>
+				<div class="user-average">Average:{user.avg}%</div>
+				<button class="expand-btn" onclick={() => user.expandedGrade()}>
 					<div id={user.expandGrade ? 'square' : 'cross'}></div>
 				</button>
 
@@ -58,9 +61,8 @@
 							id="add-tag-input"
 							type="text"
 							onkeydown={(event:KeyboardEvent) => {
-								event.key === "Enter" && user.tempTag !== ''
-									? mydata.addTag(index,user.tempTag)
-									: null;
+								event.key === "Enter"  
+									&& user.addTag()
 							}}
 							bind:value={user.tempTag}
 							placeholder="Add a tag"
@@ -174,14 +176,22 @@
 		font-size: 5vmin;
 		font-weight: 500;
 		text-transform: uppercase;
+		display: flex;
+		flex-direction: row;
+	}
+	.input-name{
+		border: none;
+		width:100%;
 	}
 	.user-email {
 		grid-area: email;
 		margin-left: 1em;
+		border: none;
 	}
 	.user-company {
 		grid-area: company;
 		margin-left: 1em;
+		
 	}
 	.user-skill {
 		grid-area: skill;
