@@ -1,3 +1,4 @@
+import { onMount } from 'svelte'
 type Student = {
 	city: string
 	company: string
@@ -137,17 +138,19 @@ export function createLocalData() {
 					: true)
 		)
 	)
-	async function fetchData() {
-		await fetch('https://api.hatchways.io/assessment/students')
-			.then((res) => res.json()) //response type
-			.then((data) => {
-				store = data.students.map((student: Student) => {
-					const newStudent = createStudent()
-					newStudent.setAll(student)
-					return newStudent
+	function fetchData() {
+		onMount(async () => {
+			await fetch('https://api.hatchways.io/assessment/students')
+				.then((res) => res.json()) //response type
+				.then((data) => {
+					store = data.students.map((student: Student) => {
+						const newStudent = createStudent()
+						newStudent.setAll(student)
+						return newStudent
+					})
+					// console.log('fetch', store)
 				})
-				// console.log('fetch', store)
-			})
+		})
 	}
 
 	store.length === 0 && fetchData()
