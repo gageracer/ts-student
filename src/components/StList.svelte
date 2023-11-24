@@ -179,9 +179,9 @@
 		display: flex;
 		flex-direction: row;
 	}
-	.input-name{
+	.input-name {
 		border: none;
-		width:100%;
+		width: 100%;
 	}
 	.user-email {
 		grid-area: email;
@@ -191,7 +191,6 @@
 	.user-company {
 		grid-area: company;
 		margin-left: 1em;
-		
 	}
 	.user-skill {
 		grid-area: skill;

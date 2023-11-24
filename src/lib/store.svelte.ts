@@ -1,4 +1,4 @@
-import { onMount } from 'svelte'
+import { browser } from '$app/environment'
 type Student = {
 	city: string
 	company: string
@@ -125,7 +125,7 @@ function createStudent() {
 }
 
 export function createLocalData() {
-	const localStorage = null
+	const localStorage = browser ? window.localStorage : null
 	let store = $state(getLocalData())
 	let filterByName: string = $state('')
 	let filterByTag: string = $state('')
@@ -138,34 +138,38 @@ export function createLocalData() {
 					: true)
 		)
 	)
-	function fetchData() {
-		onMount(async () => {
-			await fetch('https://api.hatchways.io/assessment/students')
-				.then((res) => res.json()) //response type
-				.then((data) => {
-					store = data.students.map((student: Student) => {
-						const newStudent = createStudent()
-						newStudent.setAll(student)
-						return newStudent
-					})
-					// console.log('fetch', store)
-				})
+	async function fetchData() {
+		await fetch('https://api.hatchways.io/assessment/students')
+			.then((res) => res.json()) //response type
+			.then((data) => {
+				store = studentStorefiy(data.students)
+				// console.log('fetch', store)
+			})
+	}
+	$effect(() => {
+		store.length === 0 && fetchData()
+	})
+
+	function handleSave(store: []) {
+		localStorage?.setItem('store', JSON.stringify(store))
+		console.log('saved')
+	}
+	function studentStorefiy(data:[]) {
+		return data.map((student: Student) => {
+			const newStudent = createStudent()
+			newStudent.setAll(student)
+			return newStudent
 		})
 	}
 
-	store.length === 0 && fetchData()
-
-	function handleSave() {
-		localStorage?.setItem('data', JSON.stringify(store))
-		console.log('saved')
-	}
 	function getLocalData() {
 		if (!localStorage?.getItem('store')) return []
-		return JSON.parse(localStorage?.getItem('store'))
+		console.log('localstore grabbed')
+		return studentStorefiy(JSON.parse(localStorage.getItem('store') as string))
 	}
 
 	$effect(() => {
-		handleSave()
+		handleSave(store)
 	})
 
 	return {
