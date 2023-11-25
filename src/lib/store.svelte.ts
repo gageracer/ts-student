@@ -150,11 +150,11 @@ export function createLocalData() {
 		store.length === 0 && fetchData()
 	})
 
-	function handleSave(store: []) {
+	function handleSave() {
 		localStorage?.setItem('store', JSON.stringify(store))
 		console.log('saved')
 	}
-	function studentStorefiy(data:[]) {
+	function studentStorefiy(data: []) {
 		return data.map((student: Student) => {
 			const newStudent = createStudent()
 			newStudent.setAll(student)
@@ -169,7 +169,7 @@ export function createLocalData() {
 	}
 
 	$effect(() => {
-		handleSave(store)
+		handleSave()
 	})
 
 	return {
